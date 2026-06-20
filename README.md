@@ -1,21 +1,50 @@
-# 🎬 Películas API REST
+# 🎬 PRÁCTICA 6 – Spring Boot con Bases de Datos (PostgreSQL vs SQLite)
 
-API REST desarrollada con **Spring Boot + PostgreSQL** para la gestión de películas.
+## 📌 Proyecto: Películas API REST
+
+## 👨‍💻 Autor
+
+Proyecto académico – Spring Boot CRUD API
+
+**Estudiante:** Cristian David Paco Bravo  
+**RU:** 107514
+
+---
+
+API REST desarrollada con **Spring Boot** que demuestra el uso de dos motores de base de datos diferentes:
+
+- 🐘 PostgreSQL (entorno de producción)
+- 📦 SQLite (base de datos embebida para desarrollo local)
+
+El objetivo es evidenciar cómo Spring Boot permite cambiar de motor de base de datos sin modificar el código del CRUD.
 
 ---
 
 ## 🚀 Tecnologías utilizadas
 
 - Java 21
-- Spring Boot 3
+- Spring Boot 3.5
 - Spring Data JPA
 - PostgreSQL
+- SQLite
 - Gradle
 - Swagger (SpringDoc OpenAPI)
+- IntelliJ IDEA
 
 ---
 
-## 📌 Funcionalidades
+## 🎯 Objetivo de la práctica 6
+
+Demostrar que el mismo sistema CRUD puede funcionar con:
+
+- PostgreSQL (rama `main`)
+- SQLite (rama `rama-sqlite`)
+
+sin modificar la lógica del sistema, únicamente la configuración.
+
+---
+
+## 📌 Funcionalidades del sistema
 
 - Crear película
 - Listar películas
@@ -25,7 +54,7 @@ API REST desarrollada con **Spring Boot + PostgreSQL** para la gestión de pelí
 
 ---
 
-## 📡 Endpoints
+## 📡 Endpoints REST
 
 | Método | Endpoint | Descripción |
 |--------|----------|-------------|
@@ -37,23 +66,39 @@ API REST desarrollada con **Spring Boot + PostgreSQL** para la gestión de pelí
 
 ---
 
-## 📖 Swagger
+## 📖 Swagger UI
 
-Documentación disponible en:
+Documentación interactiva:
+
+http://localhost:8080/swagger-ui/index.html
 
 ---
 
-## 🗄️ Base de datos
+## 🗄️ Bases de datos utilizadas
 
-- PostgreSQL
+### 🐘 PostgreSQL (rama main)
 - Base de datos: `peliculasdb`
+- Uso en entorno cliente-servidor
+
+### 📦 SQLite (rama rama-sqlite)
+- Archivo local: `peliculas.db`
+- Base de datos embebida (sin servidor)
+- Generada automáticamente por Spring Boot
 
 ---
 
-## 👨‍💻 Autor
+## 🧪 Evidencia de funcionamiento
 
-Proyecto académico - Spring Boot CRUD API
+En esta práctica se evidencia:
 
-## Estudiante 
-Cristian David Paco Bravo
-RU: 107514
+- Inserción de datos mediante Swagger (POST)
+- Consulta de datos (GET)
+- Eliminación de datos (DELETE)
+- Archivo SQLite generado automáticamente (`peliculas.db`)
+- Visualización de datos en DB Browser for SQLite
+
+---
+
+## 🔥 Nota importante
+
+Esta práctica demuestra la portabilidad de Spring Boot entre motores de base de datos, sin modificar la lógica del sistema, únicamente la configuración del datasource.
